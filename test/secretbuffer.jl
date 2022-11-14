@@ -70,7 +70,7 @@ using Test
         @test_throws ArgumentError Base.cconvert(Cstring, s2)
         shred!(s2)
     end
-    @testset "write! past data size" begin
+    @testset "write! past data size and unsafe_convert" begin
         sb = SecretBuffer(sizehint=2)
         # data vector will not grow
         bits = typemax(UInt8)
